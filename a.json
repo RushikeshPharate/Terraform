@@ -1,0 +1,29 @@
+{
+    "Version":"",
+    "Id":"",
+    "Statement":[
+        {
+            "Sid":1,
+            "Efect": "Allow",
+            "Principle":{
+                "AWS":["arn:aws:iam::621624261:root"]
+            },
+            "Action":[
+                "logs:CreateLogs",
+                "logs:CreateLogStream"
+            ],
+            "Resource":[]
+        },
+        {
+            "Effect":"Allow",
+            "Principle":{
+
+            },
+            "Action":[
+
+            ],
+            "Resource":[]
+        }
+    ]
+
+}

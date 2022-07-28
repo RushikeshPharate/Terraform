@@ -2,6 +2,11 @@
 # Local .terraform directories
 **/.terraform/*
 
+# files having .terraform i  their name extension
+*.terraform.*
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+**/.DS_Store
