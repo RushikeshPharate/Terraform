@@ -10,7 +10,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
   shared_credentials_file = "/Users/rushikeshpharate/.aws/credentials"
 }
 
@@ -25,13 +25,9 @@ module "lambda_role_module" {
 
 module "lambda_module" {
   source = "./lambda_module"
-  lambda_role_arn= lambda_role_module.lambda_role_arn
-  s3_bucket_arn = s3_module.s3_bucket_arn
-  s3_bucket_id = s3_module.s3_bucket_id
-
-  depends_on = [
-    lambda_role_module.lambda_role_arn
-  ]
+  lambda_role_arn= module.lambda_role_module.lambda_role_arn
+  s3_bucket_arn = module.s3_module.s3_bucket_arn
+  s3_bucket_id = module.s3_module.s3_bucket_id
 }
 
 
